@@ -1,8 +1,9 @@
-package com.examly.springapp.controller;
+package com.examly.controller;
 
 import java.util.List;
 
 import com.examly.exception.ResourceNotFoundException;
+import com.examly.model.Task;
 import com.examly.repository.TaskRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +24,9 @@ public class TaskController {
   private TaskRepository taskRepository;
 
   @GetMapping("/alltasks") 
-
-  public TaskController(TaskRepository taskRepository) {
-    this.taskRepository = taskRepository;
-  }
-  
-
   public List<Task> getallTasks()
   {
-    return taskRepository.findAll(TaskController);
+    return taskRepository.findAll();
   }
 
   @PostMapping("/saveTask")
