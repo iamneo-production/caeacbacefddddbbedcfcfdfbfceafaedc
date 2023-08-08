@@ -22,15 +22,20 @@ public class TaskController {
   @Autowired
   private TaskRepository taskRepository;
 
-  @GetMapping("/alltasks")
+  @GetMapping("/alltasks") 
 
   public TaskController(TaskRepository taskRepository) {
     this.taskRepository = taskRepository;
   }
   
+
   public List<Task> getallTasks()
   {
     return taskRepository.findAll();
+  }
+
+  public TaskController(TaskRepository taskRepository) {
+    this.taskRepository = taskRepository;
   }
 
   @PostMapping("/saveTask")
@@ -64,6 +69,7 @@ public class TaskController {
     taskRepository.delete(task);
     return "deleted sucessfully";
   }
+
 
 
 }
