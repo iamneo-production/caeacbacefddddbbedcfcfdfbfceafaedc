@@ -31,11 +31,7 @@ public class TaskController {
 
   public List<Task> getallTasks()
   {
-    return taskRepository.findAll();
-  }
-
-  public TaskController(TaskRepository taskRepository) {
-    this.taskRepository = taskRepository;
+    return taskRepository.findAll(TaskController);
   }
 
   @PostMapping("/saveTask")
